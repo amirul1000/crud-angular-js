@@ -1,0 +1,51 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+<div class="container" ng-init="loadData()">
+  <div class="row">
+
+    <div class="col-md-12">
+      <h1>Users Table</h1>
+       <div class="row">
+         <div class="col-md-12">
+           <b></b>
+           <br>
+           <a href="javascript:void();" class="btn btn-success" data-toggle="modal" ng-click="showEditor('');"><i class="material-icons"></i> <span>Add New User</span></a>
+         </div>
+       </div>
+      <div class="table-responsive">
+
+
+        <table ng-model="mytable" class="table table-bordred table-striped">
+          <thead>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Address</th>
+                <th>Edit</th>
+                <th>Delete</th>
+          </thead>
+          <tbody>
+               <tr ng-repeat="x in users">
+                    <td>{{x.first_name}}</td>
+                    <td>{{x.last_name}}</td>
+                    <td>{{x.address}}</td>
+                    <td><a href="javascript:void();" class="btn btn-success" data-toggle="modal" ng-click="showEditor(x.id);">Edit</a></td>
+                    <td> <a href="javascript:void();" class="btn btn-danger" data-toggle="modal" ng-click="deleteItem(x.id);">Delete</a></td>
+               </tr>    
+          </tbody>
+
+        </table>
+
+        <div class="clearfix"></div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
